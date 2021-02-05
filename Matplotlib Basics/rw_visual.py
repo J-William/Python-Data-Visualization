@@ -1,4 +1,5 @@
-"""Creates a visually appealing random walk with first and last points denoted and a color gradient denoting progression """
+# Creates a visually appealing random walk with first and last
+# points denoted and a color gradient denoting progression 
 import matplotlib.pyplot as plt
 
 from random_walk import RandomWalk

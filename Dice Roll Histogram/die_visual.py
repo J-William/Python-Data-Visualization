@@ -1,4 +1,5 @@
-# Creates an html histogram to visualize results of dice rolls
+# Uses plotly to create a histogram of the results of 1000
+# rolls of two six-sided dice
 from die import Die
 from plotly.graph_objs import Bar, Layout
 from plotly import offline
@@ -7,7 +8,7 @@ from plotly import offline
 die_1 = Die()
 die_2 = Die()
 
-# Roll a bunch of times
+# Roll 1000 times
 results =[]
 for roll_num in range(1000):
 	result = die_1.roll() + die_2.roll()
