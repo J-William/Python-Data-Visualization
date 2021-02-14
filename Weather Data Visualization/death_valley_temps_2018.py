@@ -1,10 +1,11 @@
-# Creates a visualization of the Sitka Alaska high and low temps for
-# 2018 with pyplot
+# The same program as sitka_temps but with error detection included to accommodate the incomplete
+# Death Valley weather data
+
 import csv
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-filename = 'data/sitka_weather_2018_simple.csv'
+filename = 'data/death_valley_2018_simple.csv'
 with open(filename) as f:
 	reader = csv.reader(f)
 	header_row = next(reader)
@@ -14,11 +15,15 @@ with open(filename) as f:
 	dates, highs, lows = [], [], []
 	for row in reader:
 		current_date = datetime.strptime(row[2], '%Y-%m-%d')
-		high = int(row[5])
-		low = int(row[6])
-		dates.append(current_date)
-		highs.append(high)
-		lows.append(low)
+		try:
+			high = int(row[4])
+			low = int(row[5])
+		except ValueError:
+			print(f"Missing data for {current_date}")
+		else:
+			dates.append(current_date)
+			highs.append(high)
+			lows.append(low)
 
 
 # Plot the high temps
