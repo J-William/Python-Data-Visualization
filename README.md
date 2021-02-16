@@ -2,7 +2,7 @@
 
 This repository features the projects and tutorials I am doing while learning data visualization with Python.
 
-Some of the experience documented here so far include: 
+Some of the notable experience documented here so far include: 
 
     Working with CSV files 
     Working with JSON files 
